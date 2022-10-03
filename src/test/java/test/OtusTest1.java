@@ -16,7 +16,7 @@ public class OtusTest1 extends BaseTest {
     String duckduck = "https://duckduckgo.com/";
     String otus = "ОТУС";
     By button = By.xpath("//input[@type='submit']");
-    String textOtus = "Онлайн-курсы для профессионалов, дистанционное обучение современным ...";
+    String textOtus = "Онлайн‑курсы для профессионалов, дистанционное обучение современным ...";
 
 
     //        Открыть Chrome в headless режим
@@ -47,8 +47,12 @@ public class OtusTest1 extends BaseTest {
             System.out.println("Вывожу " + element.getText());
             System.out.println(element);
         }
-        System.out.println("Первый элемент списка " + toString(links.get(0)));
-        Assert.assertEquals(toString(links.get(0)),textOtus);
+        //System.out.println("Первый элемент списка " + toString(links.get(0)));
+        System.out.println("Первый элемент списка " + links.get(0).getText());
+        Assert.assertEquals(links.get(0).getText(),textOtus);
+        //toString(links.get(0)).contains(textOtus);
+
+        //Assert.assertEquals(toString(links.get(0)),textOtus);
 
 
 
@@ -56,7 +60,7 @@ public class OtusTest1 extends BaseTest {
     }
 
 
-    private String toString(WebElement webElement) {
-        return webElement.getText();
-    }
+//    private String toString(WebElement webElement) {
+//        return webElement.getText();
+//    }
 }

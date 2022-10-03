@@ -1,6 +1,8 @@
 package test.Base;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -10,6 +12,7 @@ import org.testng.annotations.BeforeMethod;
 public class BaseTest {
 
     protected WebDriver driver;
+    protected Logger logger = LogManager.getLogger(BaseTest.class);
     @BeforeMethod
     public void setUp(){
 //        ChromeOptions options = new ChromeOptions();
@@ -18,6 +21,7 @@ public class BaseTest {
 //        driver = new ChromeDriver(options);
         WebDriverManager.chromedriver().setup();// запускает драйвер chrome
         driver = new ChromeDriver();
+        logger.info("Драйвер поднят");
 
 
     }
