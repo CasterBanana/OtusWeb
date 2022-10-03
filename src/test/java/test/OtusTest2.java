@@ -13,7 +13,7 @@ public class OtusTest2 extends BaseTest {
 
     @Test
     public void otusTest2() throws InterruptedException {
-        //driver.manage().window().fullscreen();
+        driver.manage().window().fullscreen();
         //        Открыть Chrome в режиме киоска
         //        Перейти на сайт
         driver.get("https://demo.w3layouts.com/demos_new/template_demo/03-10-2020/photoflash-liberty-demo_Free/685659620/web/index.html?_ga=2.181802926.889871791.1632394818-2083132868.1632394818");

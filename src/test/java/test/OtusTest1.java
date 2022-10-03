@@ -24,7 +24,7 @@ public class OtusTest1 extends BaseTest {
     @Override
     public void setUp() {
         ChromeOptions options = new ChromeOptions();
-        //options.addArguments("headless");
+        options.addArguments("headless");
         WebDriverManager.chromedriver().setup();// запускает драйвер chrome, установили драйвер
         driver = new ChromeDriver(options); // инициализация драйвера, что в драйвере именно хромдрайвер
 
@@ -39,16 +39,13 @@ public class OtusTest1 extends BaseTest {
         driver.findElement(By.xpath("//input[@type='submit']")).click();
         Thread.sleep(2000);
         //        Проверить что в поисковой выдаче первый результат Онлайн‑курсы для профессионалов, дистанционное обучение // drive.findElements и использовать первый элемент массива 0 который xpath, который удовлетворяет под все записи
-        //driver.findElement(By.linkText("Онлайн‑курсы для профессионалов, дистанционное обучение современным ...")).click();// открывает отус)
-        //List<WebElement> links = driver.findElements(By.xpath("span[@class='EKtkFWMYpwzMKOYr0GYm LQVY1Jpkk8nyJ6HBWKAk']"));// тут мы все подходящие ссылки результата загоним в список
-        //List<WebElement> links = driver.findElements(By.xpath("//div/h2[@class='LnpumSThxEWMIsDdAT17 CXMyPcQ6nDv47DKFeywM']"));
         List<WebElement> links = driver.findElements(By.xpath("//div//span[@class='EKtkFWMYpwzMKOYr0GYm LQVY1Jpkk8nyJ6HBWKAk']"));
         for (WebElement element : links) {
-            System.out.println("Вывожу " + element.getText());
-            System.out.println(element);
+//            System.out.println("Вывожу " + element.getText());
+//            System.out.println(element);
         }
         //System.out.println("Первый элемент списка " + toString(links.get(0)));
-        System.out.println("Первый элемент списка " + links.get(0).getText());
+        //System.out.println("Первый элемент списка " + links.get(0).getText());
         Assert.assertEquals(links.get(0).getText(),textOtus);
         //toString(links.get(0)).contains(textOtus);
 
@@ -58,9 +55,4 @@ public class OtusTest1 extends BaseTest {
 
 
     }
-
-
-//    private String toString(WebElement webElement) {
-//        return webElement.getText();
-//    }
 }
