@@ -6,7 +6,7 @@ import org.testng.annotations.Test;
 import test.base.BaseTest;
 
 public class OtusTestFullscreen extends BaseTest {
-
+    protected String handle2;
     @Test
     public void otusTest2() throws InterruptedException {
         //        Открыть Chrome в режиме киоска
@@ -16,6 +16,8 @@ public class OtusTestFullscreen extends BaseTest {
 //        Нажать на любую картинку
         driver.findElement(By.xpath("//li[@data-id='id-1']/span/a[@class='image-zoom']")).click();
 //        Проверить что картинка открылась в модальном окне
+        handle2 = driver.getWindowHandle(); // получить handle открытого окна
+        driver.switchTo().window(handle2); // официально переключися на него)))
         driver.findElement(By.xpath("//div[@class='pp_hoverContainer']"));
     }
 
