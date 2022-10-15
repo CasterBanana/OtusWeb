@@ -21,8 +21,6 @@ public class BaseTest {
         WebDriverManager.chromedriver().setup();// запускает драйвер chrome
         driver = new ChromeDriver();
         logger.info("Драйвер поднят");
-
-
     }
 
 
