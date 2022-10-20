@@ -15,7 +15,7 @@ public class OtusTestMaximize extends BaseTest {
     public void testOtus3() throws InterruptedException {
         driver.manage().window().maximize();
         driver.get("https://otus.ru");
-        driver.findElement(By.xpath("//button[@class='header2__auth js-open-modal']")).click(); // Нажать кнопку авторизации
+        driver.findElement(By.xpath("//header//*[@data-modal-id='new-log-reg']")).click(); // Нажать кнопку авторизации
         WebElement wait = new WebDriverWait(driver, Duration.ofSeconds(10))
                 .until(ExpectedConditions
                         .elementToBeClickable(By.xpath("//form/*/input[@type='text'][@placeholder='Электронная почта']")));
