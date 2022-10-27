@@ -13,7 +13,7 @@ public abstract class BaseTest {
 
     protected WebDriver driver;
     protected Logger logger = LogManager.getLogger(BaseTest.class);
-    @BeforeSuite
+    @BeforeMethod
     public void setUp(){
         WebDriverManager.chromedriver().setup();// скачивает драйвер chrome
         driver = new ChromeDriver();
@@ -21,7 +21,7 @@ public abstract class BaseTest {
     }
 
 
-    @AfterSuite
+    @AfterMethod
     public void setDown(){
         if(driver!= null)
             driver.quit();
